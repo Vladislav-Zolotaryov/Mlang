@@ -1,22 +1,36 @@
 #include <iostream>
 
+#include "./parser/MlangBaseListener.h"
+#include "./parser/MlangLexer.h"
+#include "./parser/MlangParser.h"
 #include "antlr4-runtime.h"
-#include "../parser/MlangLexer.h"
-#include "../parser/MlangParser.h"
+#include "src/parser/MlangVisitor.h"
 
 using namespace std;
 using namespace antlr4;
 
-int main(int argc, const char* argv[]) {
-    std::ifstream stream;
-    stream.open("input.mlang");
-    
-    ANTLRInputStream input(stream);
-    MlangLexer lexer(&input);
-    CommonTokenStream tokens(&lexer);
-    MlangParser parser(&tokens);    
-    
-    MlangParser::FileContext* tree = parser.file();
+class ExpressionListener : public MlangBaseListener {
 
-    return 0;
+  void enterExpr(MlangParser::ExprContext *ctx) { std::cout << "enter"; }
+
+  void exitExpr(MlangParser::ExprContext *ctx) { std::cout << "exit"; }
+
+};
+
+int main(int argc, const char* argv[]) {
+  std::ifstream stream;
+  stream.open("input.mlang");
+
+  ANTLRInputStream input(stream);
+  MlangLexer lexer(&input);
+  CommonTokenStream tokens(&lexer);
+  MlangParser parser(&tokens);
+
+  ExpressionListener listener;
+
+  tree::ParseTree *tree = parser.expr();
+
+  antlr4::tree::ParseTreeWalker::DEFAULT.walk(&listener, tree);
+
+  return 0;
 }

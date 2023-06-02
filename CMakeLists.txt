@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.15)
 project(mlang CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-find_package(ANTLR4-RUNTIME REQUIRED)
+find_package(antlr4-runtime REQUIRED)
 
-add_executable(${PROJECT_NAME} src/mlang.cpp)
+include_directories(${PROJECT_SOURCE_DIR})
+add_executable(${PROJECT_NAME} src/mlang.cpp src/parser/MlangParser.cpp src/parser/MlangLexer.cpp src/parser/MlangListener.cpp)
 
-set(EXECUTABLE_OUTPUT_PATH "build")
-
-target_include_directories(${PROJECT_NAME} PRIVATE ANTLR4-RUNTIME)
-target_link_libraries(${PROJECT_NAME} ANTLR4-RUNTIME)
+target_include_directories(${PROJECT_NAME} PRIVATE antlr4_static)
+target_link_libraries(${PROJECT_NAME} antlr4_static)
