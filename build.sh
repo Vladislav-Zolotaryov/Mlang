@@ -1,1 +1,4 @@
-g++ -std=c++17 -o ./build/out.bin -I /usr/include/antlr4-runtime/ -I /usr/include/antlr4-runtime/misc -I /usr/include/antlr4-runtime/atn -I /usr/include/antlr4-runtime/dfa -I /usr/include/antlr4-runtime/tree -I /usr/include/antlr4-runtime/support -I ./parser ./parser/*.cpp
+conan install . --output-folder=build --build=missing || echo "Conan failed"
+cd build
+cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release || echo "CMake prebuild failed"
+cmake --build . || echo "CMake build failed"

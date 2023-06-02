@@ -3,13 +3,11 @@ project(mlang CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(mlang src/mlang.cpp)
+find_package(ANTLR4-RUNTIME REQUIRED)
 
-set(EXECUTABLE_OUTPUT_PATH "bin")
+add_executable(${PROJECT_NAME} src/mlang.cpp)
 
-install(
-    TARGETS mlang DESTINATION "."
-    RUNTIME DESTINATION bin
-    ARCHIVE DESTINATION lib
-    LIBRARY DESTINATION lib
-)
+set(EXECUTABLE_OUTPUT_PATH "build")
+
+target_include_directories(${PROJECT_NAME} PRIVATE ANTLR4-RUNTIME)
+target_link_libraries(${PROJECT_NAME} ANTLR4-RUNTIME)
