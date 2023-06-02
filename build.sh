@@ -1,0 +1,1 @@
+g++ -std=c++17 -o ./build/out.bin -I /usr/include/antlr4-runtime/ -I /usr/include/antlr4-runtime/misc -I /usr/include/antlr4-runtime/atn -I /usr/include/antlr4-runtime/dfa -I /usr/include/antlr4-runtime/tree -I /usr/include/antlr4-runtime/support -I ./parser ./parser/*.cpp
