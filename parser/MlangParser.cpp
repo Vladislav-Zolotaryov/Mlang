@@ -1,11 +1,11 @@
 
-// Generated from ./parser/Expr.g4 by ANTLR 4.12.0
+// Generated from ./parser/Mlang.g4 by ANTLR 4.12.0
 
 
-#include "ExprListener.h"
-#include "ExprVisitor.h"
+#include "MlangListener.h"
+#include "MlangVisitor.h"
 
-#include "ExprParser.h"
+#include "MlangParser.h"
 
 
 using namespace antlrcpp;
@@ -14,18 +14,18 @@ using namespace antlr4;
 
 namespace {
 
-struct ExprParserStaticData final {
-  ExprParserStaticData(std::vector<std::string> ruleNames,
+struct MlangParserStaticData final {
+  MlangParserStaticData(std::vector<std::string> ruleNames,
                         std::vector<std::string> literalNames,
                         std::vector<std::string> symbolicNames)
       : ruleNames(std::move(ruleNames)), literalNames(std::move(literalNames)),
         symbolicNames(std::move(symbolicNames)),
         vocabulary(this->literalNames, this->symbolicNames) {}
 
-  ExprParserStaticData(const ExprParserStaticData&) = delete;
-  ExprParserStaticData(ExprParserStaticData&&) = delete;
-  ExprParserStaticData& operator=(const ExprParserStaticData&) = delete;
-  ExprParserStaticData& operator=(ExprParserStaticData&&) = delete;
+  MlangParserStaticData(const MlangParserStaticData&) = delete;
+  MlangParserStaticData(MlangParserStaticData&&) = delete;
+  MlangParserStaticData& operator=(const MlangParserStaticData&) = delete;
+  MlangParserStaticData& operator=(MlangParserStaticData&&) = delete;
 
   std::vector<antlr4::dfa::DFA> decisionToDFA;
   antlr4::atn::PredictionContextCache sharedContextCache;
@@ -37,12 +37,12 @@ struct ExprParserStaticData final {
   std::unique_ptr<antlr4::atn::ATN> atn;
 };
 
-::antlr4::internal::OnceFlag exprParserOnceFlag;
-ExprParserStaticData *exprParserStaticData = nullptr;
+::antlr4::internal::OnceFlag mlangParserOnceFlag;
+MlangParserStaticData *mlangParserStaticData = nullptr;
 
-void exprParserInitialize() {
-  assert(exprParserStaticData == nullptr);
-  auto staticData = std::make_unique<ExprParserStaticData>(
+void mlangParserInitialize() {
+  assert(mlangParserStaticData == nullptr);
+  auto staticData = std::make_unique<MlangParserStaticData>(
     std::vector<std::string>{
       "prog", "expr"
     },
@@ -73,85 +73,85 @@ void exprParserInitialize() {
   for (size_t i = 0; i < count; i++) { 
     staticData->decisionToDFA.emplace_back(staticData->atn->getDecisionState(i), i);
   }
-  exprParserStaticData = staticData.release();
+  mlangParserStaticData = staticData.release();
 }
 
 }
 
-ExprParser::ExprParser(TokenStream *input) : ExprParser(input, antlr4::atn::ParserATNSimulatorOptions()) {}
+MlangParser::MlangParser(TokenStream *input) : MlangParser(input, antlr4::atn::ParserATNSimulatorOptions()) {}
 
-ExprParser::ExprParser(TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options) : Parser(input) {
-  ExprParser::initialize();
-  _interpreter = new atn::ParserATNSimulator(this, *exprParserStaticData->atn, exprParserStaticData->decisionToDFA, exprParserStaticData->sharedContextCache, options);
+MlangParser::MlangParser(TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options) : Parser(input) {
+  MlangParser::initialize();
+  _interpreter = new atn::ParserATNSimulator(this, *mlangParserStaticData->atn, mlangParserStaticData->decisionToDFA, mlangParserStaticData->sharedContextCache, options);
 }
 
-ExprParser::~ExprParser() {
+MlangParser::~MlangParser() {
   delete _interpreter;
 }
 
-const atn::ATN& ExprParser::getATN() const {
-  return *exprParserStaticData->atn;
+const atn::ATN& MlangParser::getATN() const {
+  return *mlangParserStaticData->atn;
 }
 
-std::string ExprParser::getGrammarFileName() const {
-  return "Expr.g4";
+std::string MlangParser::getGrammarFileName() const {
+  return "Mlang.g4";
 }
 
-const std::vector<std::string>& ExprParser::getRuleNames() const {
-  return exprParserStaticData->ruleNames;
+const std::vector<std::string>& MlangParser::getRuleNames() const {
+  return mlangParserStaticData->ruleNames;
 }
 
-const dfa::Vocabulary& ExprParser::getVocabulary() const {
-  return exprParserStaticData->vocabulary;
+const dfa::Vocabulary& MlangParser::getVocabulary() const {
+  return mlangParserStaticData->vocabulary;
 }
 
-antlr4::atn::SerializedATNView ExprParser::getSerializedATN() const {
-  return exprParserStaticData->serializedATN;
+antlr4::atn::SerializedATNView MlangParser::getSerializedATN() const {
+  return mlangParserStaticData->serializedATN;
 }
 
 
 //----------------- ProgContext ------------------------------------------------------------------
 
-ExprParser::ProgContext::ProgContext(ParserRuleContext *parent, size_t invokingState)
+MlangParser::ProgContext::ProgContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-ExprParser::ExprContext* ExprParser::ProgContext::expr() {
-  return getRuleContext<ExprParser::ExprContext>(0);
+MlangParser::ExprContext* MlangParser::ProgContext::expr() {
+  return getRuleContext<MlangParser::ExprContext>(0);
 }
 
-tree::TerminalNode* ExprParser::ProgContext::EOF() {
-  return getToken(ExprParser::EOF, 0);
+tree::TerminalNode* MlangParser::ProgContext::EOF() {
+  return getToken(MlangParser::EOF, 0);
 }
 
 
-size_t ExprParser::ProgContext::getRuleIndex() const {
-  return ExprParser::RuleProg;
+size_t MlangParser::ProgContext::getRuleIndex() const {
+  return MlangParser::RuleProg;
 }
 
-void ExprParser::ProgContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<ExprListener *>(listener);
+void MlangParser::ProgContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<MlangListener *>(listener);
   if (parserListener != nullptr)
     parserListener->enterProg(this);
 }
 
-void ExprParser::ProgContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<ExprListener *>(listener);
+void MlangParser::ProgContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<MlangListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitProg(this);
 }
 
 
-std::any ExprParser::ProgContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<ExprVisitor*>(visitor))
+std::any MlangParser::ProgContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<MlangVisitor*>(visitor))
     return parserVisitor->visitProg(this);
   else
     return visitor->visitChildren(this);
 }
 
-ExprParser::ProgContext* ExprParser::prog() {
+MlangParser::ProgContext* MlangParser::prog() {
   ProgContext *_localctx = _tracker.createInstance<ProgContext>(_ctx, getState());
-  enterRule(_localctx, 0, ExprParser::RuleProg);
+  enterRule(_localctx, 0, MlangParser::RuleProg);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -165,7 +165,7 @@ ExprParser::ProgContext* ExprParser::prog() {
     setState(4);
     expr(0);
     setState(5);
-    match(ExprParser::EOF);
+    match(MlangParser::EOF);
    
   }
   catch (RecognitionException &e) {
@@ -179,60 +179,60 @@ ExprParser::ProgContext* ExprParser::prog() {
 
 //----------------- ExprContext ------------------------------------------------------------------
 
-ExprParser::ExprContext::ExprContext(ParserRuleContext *parent, size_t invokingState)
+MlangParser::ExprContext::ExprContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* ExprParser::ExprContext::INT() {
-  return getToken(ExprParser::INT, 0);
+tree::TerminalNode* MlangParser::ExprContext::INT() {
+  return getToken(MlangParser::INT, 0);
 }
 
-std::vector<ExprParser::ExprContext *> ExprParser::ExprContext::expr() {
-  return getRuleContexts<ExprParser::ExprContext>();
+std::vector<MlangParser::ExprContext *> MlangParser::ExprContext::expr() {
+  return getRuleContexts<MlangParser::ExprContext>();
 }
 
-ExprParser::ExprContext* ExprParser::ExprContext::expr(size_t i) {
-  return getRuleContext<ExprParser::ExprContext>(i);
+MlangParser::ExprContext* MlangParser::ExprContext::expr(size_t i) {
+  return getRuleContext<MlangParser::ExprContext>(i);
 }
 
 
-size_t ExprParser::ExprContext::getRuleIndex() const {
-  return ExprParser::RuleExpr;
+size_t MlangParser::ExprContext::getRuleIndex() const {
+  return MlangParser::RuleExpr;
 }
 
-void ExprParser::ExprContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<ExprListener *>(listener);
+void MlangParser::ExprContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<MlangListener *>(listener);
   if (parserListener != nullptr)
     parserListener->enterExpr(this);
 }
 
-void ExprParser::ExprContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<ExprListener *>(listener);
+void MlangParser::ExprContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<MlangListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitExpr(this);
 }
 
 
-std::any ExprParser::ExprContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<ExprVisitor*>(visitor))
+std::any MlangParser::ExprContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<MlangVisitor*>(visitor))
     return parserVisitor->visitExpr(this);
   else
     return visitor->visitChildren(this);
 }
 
 
-ExprParser::ExprContext* ExprParser::expr() {
+MlangParser::ExprContext* MlangParser::expr() {
    return expr(0);
 }
 
-ExprParser::ExprContext* ExprParser::expr(int precedence) {
+MlangParser::ExprContext* MlangParser::expr(int precedence) {
   ParserRuleContext *parentContext = _ctx;
   size_t parentState = getState();
-  ExprParser::ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, parentState);
-  ExprParser::ExprContext *previousContext = _localctx;
+  MlangParser::ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, parentState);
+  MlangParser::ExprContext *previousContext = _localctx;
   (void)previousContext; // Silence compiler, in case the context is not used by generated code.
   size_t startState = 2;
-  enterRecursionRule(_localctx, 2, ExprParser::RuleExpr, precedence);
+  enterRecursionRule(_localctx, 2, MlangParser::RuleExpr, precedence);
 
     size_t _la = 0;
 
@@ -249,19 +249,19 @@ ExprParser::ExprContext* ExprParser::expr(int precedence) {
     setState(13);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
-      case ExprParser::INT: {
+      case MlangParser::INT: {
         setState(8);
-        match(ExprParser::INT);
+        match(MlangParser::INT);
         break;
       }
 
-      case ExprParser::T__4: {
+      case MlangParser::T__4: {
         setState(9);
-        match(ExprParser::T__4);
+        match(MlangParser::T__4);
         setState(10);
         expr(0);
         setState(11);
-        match(ExprParser::T__5);
+        match(MlangParser::T__5);
         break;
       }
 
@@ -288,9 +288,9 @@ ExprParser::ExprContext* ExprParser::expr(int precedence) {
           if (!(precpred(_ctx, 4))) throw FailedPredicateException(this, "precpred(_ctx, 4)");
           setState(16);
           _la = _input->LA(1);
-          if (!(_la == ExprParser::T__0
+          if (!(_la == MlangParser::T__0
 
-          || _la == ExprParser::T__1)) {
+          || _la == MlangParser::T__1)) {
           _errHandler->recoverInline(this);
           }
           else {
@@ -310,9 +310,9 @@ ExprParser::ExprContext* ExprParser::expr(int precedence) {
           if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
           setState(19);
           _la = _input->LA(1);
-          if (!(_la == ExprParser::T__2
+          if (!(_la == MlangParser::T__2
 
-          || _la == ExprParser::T__3)) {
+          || _la == MlangParser::T__3)) {
           _errHandler->recoverInline(this);
           }
           else {
@@ -341,7 +341,7 @@ ExprParser::ExprContext* ExprParser::expr(int precedence) {
   return _localctx;
 }
 
-bool ExprParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
+bool MlangParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
   switch (ruleIndex) {
     case 1: return exprSempred(antlrcpp::downCast<ExprContext *>(context), predicateIndex);
 
@@ -351,7 +351,7 @@ bool ExprParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicat
   return true;
 }
 
-bool ExprParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
+bool MlangParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
     case 0: return precpred(_ctx, 4);
     case 1: return precpred(_ctx, 3);
@@ -362,6 +362,6 @@ bool ExprParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
   return true;
 }
 
-void ExprParser::initialize() {
-  ::antlr4::internal::call_once(exprParserOnceFlag, exprParserInitialize);
+void MlangParser::initialize() {
+  ::antlr4::internal::call_once(mlangParserOnceFlag, mlangParserInitialize);
 }

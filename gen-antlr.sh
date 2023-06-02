@@ -1,1 +1,1 @@
-antlr4 -visitor -Dlanguage=Cpp  ./parser/Expr.g4
+antlr4 -visitor -Dlanguage=Cpp  ./parser/Mlang.g4

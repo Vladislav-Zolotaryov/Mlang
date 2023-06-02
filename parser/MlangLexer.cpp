@@ -1,8 +1,8 @@
 
-// Generated from ./parser/Expr.g4 by ANTLR 4.12.0
+// Generated from ./parser/Mlang.g4 by ANTLR 4.12.0
 
 
-#include "ExprLexer.h"
+#include "MlangLexer.h"
 
 
 using namespace antlr4;
@@ -13,8 +13,8 @@ using namespace antlr4;
 
 namespace {
 
-struct ExprLexerStaticData final {
-  ExprLexerStaticData(std::vector<std::string> ruleNames,
+struct MlangLexerStaticData final {
+  MlangLexerStaticData(std::vector<std::string> ruleNames,
                           std::vector<std::string> channelNames,
                           std::vector<std::string> modeNames,
                           std::vector<std::string> literalNames,
@@ -24,10 +24,10 @@ struct ExprLexerStaticData final {
         symbolicNames(std::move(symbolicNames)),
         vocabulary(this->literalNames, this->symbolicNames) {}
 
-  ExprLexerStaticData(const ExprLexerStaticData&) = delete;
-  ExprLexerStaticData(ExprLexerStaticData&&) = delete;
-  ExprLexerStaticData& operator=(const ExprLexerStaticData&) = delete;
-  ExprLexerStaticData& operator=(ExprLexerStaticData&&) = delete;
+  MlangLexerStaticData(const MlangLexerStaticData&) = delete;
+  MlangLexerStaticData(MlangLexerStaticData&&) = delete;
+  MlangLexerStaticData& operator=(const MlangLexerStaticData&) = delete;
+  MlangLexerStaticData& operator=(MlangLexerStaticData&&) = delete;
 
   std::vector<antlr4::dfa::DFA> decisionToDFA;
   antlr4::atn::PredictionContextCache sharedContextCache;
@@ -41,12 +41,12 @@ struct ExprLexerStaticData final {
   std::unique_ptr<antlr4::atn::ATN> atn;
 };
 
-::antlr4::internal::OnceFlag exprlexerLexerOnceFlag;
-ExprLexerStaticData *exprlexerLexerStaticData = nullptr;
+::antlr4::internal::OnceFlag mlanglexerLexerOnceFlag;
+MlangLexerStaticData *mlanglexerLexerStaticData = nullptr;
 
-void exprlexerLexerInitialize() {
-  assert(exprlexerLexerStaticData == nullptr);
-  auto staticData = std::make_unique<ExprLexerStaticData>(
+void mlanglexerLexerInitialize() {
+  assert(mlanglexerLexerStaticData == nullptr);
+  auto staticData = std::make_unique<MlangLexerStaticData>(
     std::vector<std::string>{
       "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "NEWLINE", "INT"
     },
@@ -88,51 +88,51 @@ void exprlexerLexerInitialize() {
   for (size_t i = 0; i < count; i++) { 
     staticData->decisionToDFA.emplace_back(staticData->atn->getDecisionState(i), i);
   }
-  exprlexerLexerStaticData = staticData.release();
+  mlanglexerLexerStaticData = staticData.release();
 }
 
 }
 
-ExprLexer::ExprLexer(CharStream *input) : Lexer(input) {
-  ExprLexer::initialize();
-  _interpreter = new atn::LexerATNSimulator(this, *exprlexerLexerStaticData->atn, exprlexerLexerStaticData->decisionToDFA, exprlexerLexerStaticData->sharedContextCache);
+MlangLexer::MlangLexer(CharStream *input) : Lexer(input) {
+  MlangLexer::initialize();
+  _interpreter = new atn::LexerATNSimulator(this, *mlanglexerLexerStaticData->atn, mlanglexerLexerStaticData->decisionToDFA, mlanglexerLexerStaticData->sharedContextCache);
 }
 
-ExprLexer::~ExprLexer() {
+MlangLexer::~MlangLexer() {
   delete _interpreter;
 }
 
-std::string ExprLexer::getGrammarFileName() const {
-  return "Expr.g4";
+std::string MlangLexer::getGrammarFileName() const {
+  return "Mlang.g4";
 }
 
-const std::vector<std::string>& ExprLexer::getRuleNames() const {
-  return exprlexerLexerStaticData->ruleNames;
+const std::vector<std::string>& MlangLexer::getRuleNames() const {
+  return mlanglexerLexerStaticData->ruleNames;
 }
 
-const std::vector<std::string>& ExprLexer::getChannelNames() const {
-  return exprlexerLexerStaticData->channelNames;
+const std::vector<std::string>& MlangLexer::getChannelNames() const {
+  return mlanglexerLexerStaticData->channelNames;
 }
 
-const std::vector<std::string>& ExprLexer::getModeNames() const {
-  return exprlexerLexerStaticData->modeNames;
+const std::vector<std::string>& MlangLexer::getModeNames() const {
+  return mlanglexerLexerStaticData->modeNames;
 }
 
-const dfa::Vocabulary& ExprLexer::getVocabulary() const {
-  return exprlexerLexerStaticData->vocabulary;
+const dfa::Vocabulary& MlangLexer::getVocabulary() const {
+  return mlanglexerLexerStaticData->vocabulary;
 }
 
-antlr4::atn::SerializedATNView ExprLexer::getSerializedATN() const {
-  return exprlexerLexerStaticData->serializedATN;
+antlr4::atn::SerializedATNView MlangLexer::getSerializedATN() const {
+  return mlanglexerLexerStaticData->serializedATN;
 }
 
-const atn::ATN& ExprLexer::getATN() const {
-  return *exprlexerLexerStaticData->atn;
+const atn::ATN& MlangLexer::getATN() const {
+  return *mlanglexerLexerStaticData->atn;
 }
 
 
 
 
-void ExprLexer::initialize() {
-  ::antlr4::internal::call_once(exprlexerLexerOnceFlag, exprlexerLexerInitialize);
+void MlangLexer::initialize() {
+  ::antlr4::internal::call_once(mlanglexerLexerOnceFlag, mlanglexerLexerInitialize);
 }

@@ -1,4 +1,4 @@
-grammar Expr;		
+grammar Mlang;		
 prog:	expr EOF ;
 expr:	expr ('*'|'/') expr
     |	expr ('+'|'-') expr

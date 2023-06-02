@@ -33,3 +33,10 @@
 
 build/
 .vscode/
+CMakeCache.txt
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+mlang
+bin/

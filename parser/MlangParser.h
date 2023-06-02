@@ -1,5 +1,5 @@
 
-// Generated from ./parser/Expr.g4 by ANTLR 4.12.0
+// Generated from ./parser/Mlang.g4 by ANTLR 4.12.0
 
 #pragma once
 
@@ -9,7 +9,7 @@
 
 
 
-class  ExprParser : public antlr4::Parser {
+class  MlangParser : public antlr4::Parser {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, NEWLINE = 7, 
@@ -20,11 +20,11 @@ public:
     RuleProg = 0, RuleExpr = 1
   };
 
-  explicit ExprParser(antlr4::TokenStream *input);
+  explicit MlangParser(antlr4::TokenStream *input);
 
-  ExprParser(antlr4::TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options);
+  MlangParser(antlr4::TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options);
 
-  ~ExprParser() override;
+  ~MlangParser() override;
 
   std::string getGrammarFileName() const override;
 
