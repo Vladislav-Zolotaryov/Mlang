@@ -1,0 +1,1 @@
+./build/mlang examples/input.mlang 

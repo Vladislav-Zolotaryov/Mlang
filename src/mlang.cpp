@@ -11,15 +11,20 @@ using namespace antlr4;
 
 class ExpressionListener : public MlangBaseListener {
 
-  void enterExpr(MlangParser::ExprContext *ctx) { std::cout << "enter"; }
+  void enterExpr(MlangParser::ExprContext *ctx) { std::cout << ctx->getText() << endl; }
 
-  void exitExpr(MlangParser::ExprContext *ctx) { std::cout << "exit"; }
-
+  void exitExpr(MlangParser::ExprContext *ctx) {  }
 };
 
-int main(int argc, const char* argv[]) {
+int main(int argc, const char *argv[]) {
+  if (argc != 2) {
+    std::cerr << "Provide a file to compile";
+    return -1;
+  }
+
+    std::string filename = argv[1];
   std::ifstream stream;
-  stream.open("input.mlang");
+  stream.open(filename);
 
   ANTLRInputStream input(stream);
   MlangLexer lexer(&input);

@@ -12,8 +12,8 @@
 class  MlangLexer : public antlr4::Lexer {
 public:
   enum {
-    T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, NEWLINE = 7, 
-    INT = 8
+    T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, WS = 7, 
+    NEWLINE = 8, INT = 9
   };
 
   explicit MlangLexer(antlr4::CharStream *input);
@@ -35,6 +35,8 @@ public:
 
   const antlr4::atn::ATN& getATN() const override;
 
+  void action(antlr4::RuleContext *context, size_t ruleIndex, size_t actionIndex) override;
+
   // By default the static state used to implement the lexer is lazily initialized during the first
   // call to the constructor. You can call this function if you wish to initialize the static state
   // ahead of time.
@@ -43,6 +45,7 @@ public:
 private:
 
   // Individual action functions triggered by action() above.
+  void WSAction(antlr4::RuleContext *context, size_t actionIndex);
 
   // Individual semantic predicate functions triggered by sempred() above.
 
